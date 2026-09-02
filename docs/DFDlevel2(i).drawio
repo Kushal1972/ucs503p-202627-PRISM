@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="prism-final" name="PRISM Use Case Diagram">
+    <mxGraphModel dx="1377" dy="953" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#B4B2A9;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="Government / ADP List" vertex="1">
+          <mxGeometry height="60" width="220" x="574.1538461538462" y="404.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3A2A06;strokeColor=#D99A2B;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="D3 Model Outputs &amp; Validation Results" vertex="1">
+          <mxGeometry height="60" width="220" x="1034.1538461538462" y="404.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-27" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F6E56;strokeColor=#5DCAA5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.1 Retrieve Predictions &amp; Ground Truth" vertex="1">
+          <mxGeometry height="70" width="220" x="809.1538461538462" y="524.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-28" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F6E56;strokeColor=#5DCAA5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.2 Compute Validation Agreement (Precision/Recall vs ADP)" vertex="1">
+          <mxGeometry height="80" width="210" x="574.1538461538462" y="664.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F6E56;strokeColor=#5DCAA5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.3 Compute Clustering &amp; Classification Quality (Silhouette, F1)" vertex="1">
+          <mxGeometry height="80" width="210" x="814.1538461538462" y="664.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-30" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F6E56;strokeColor=#5DCAA5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.4 Extract Feature Importance (Random Forest)" vertex="1">
+          <mxGeometry height="80" width="210" x="1054.1538461538462" y="664.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-31" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0F6E56;strokeColor=#5DCAA5;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.5 Compute Explainability &amp; Data Completeness Coverage" vertex="1">
+          <mxGeometry height="80" width="210" x="1054.1538461538462" y="804.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#3C3489;strokeColor=#AFA9EC;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="5.6 Compile Validation &amp; Explainability Report" vertex="1">
+          <mxGeometry height="80" width="220" x="809.1538461538462" y="944.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#3A2A06;strokeColor=#D99A2B;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" value="D3 Model Outputs &amp; Validation Results" vertex="1">
+          <mxGeometry height="60" width="220" x="574.1538461538462" y="1084.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-34" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=light-dark(#6D8764,#67AB9F);strokeColor=#3A5431;fontColor=#ffffff;fontSize=12;fontStyle=1;" value="6.0 Presentation and Decision Support" vertex="1">
+          <mxGeometry height="60" width="220" x="1034.1538461538462" y="1084.6923076923076" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-55" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-32" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1144.15" y="1012.98" />
+            </Array>
+            <mxPoint x="900" y="1120" as="sourcePoint" />
+            <mxPoint x="950" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-56" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-32" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="684.15" y="1012.98" />
+            </Array>
+            <mxPoint x="900" y="1120" as="sourcePoint" />
+            <mxPoint x="950" y="1070" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-57" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=24;fontColor=#111111;align=center;verticalAlign=middle;" value="DFD Level 2 — Validation and Explainability" vertex="1">
+          <mxGeometry height="45" width="640" x="599.15" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-58" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-27" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6NUe2xrrUi22PVwMwD8X-29" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="750" as="sourcePoint" />
+            <mxPoint x="980" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-59" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-58" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Cluster/Classifier Outputs" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-60" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-25" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6NUe2xrrUi22PVwMwD8X-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="684.15" y="560" />
+            </Array>
+            <mxPoint x="870" y="670" as="sourcePoint" />
+            <mxPoint x="820" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-61" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-60" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="ADP List(112 Districts)" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-15" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-62" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-26" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1144.15" y="560" />
+            </Array>
+            <mxPoint x="870" y="670" as="sourcePoint" />
+            <mxPoint x="970" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-63" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-62" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Predictions + Cluster labels" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="-35" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-64" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-27" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="6NUe2xrrUi22PVwMwD8X-28" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="584.27" />
+            </Array>
+            <mxPoint x="850" y="770" as="sourcePoint" />
+            <mxPoint x="950" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-65" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-64" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Predictions + ground truth pairs" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-41" y="36" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-66" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-27" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-30" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="584.27" />
+            </Array>
+            <mxPoint x="850" y="770" as="sourcePoint" />
+            <mxPoint x="950" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-67" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-66" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Trained Random Forest model" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-68" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-30" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-31" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="850" as="sourcePoint" />
+            <mxPoint x="950" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-69" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-68" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Feature importance rankings" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-71" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-28" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-32" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="679.15" y="984.69" />
+            </Array>
+            <mxPoint x="880" y="870" as="sourcePoint" />
+            <mxPoint x="980" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-72" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-71" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Precision / recall scores" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-63" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-73" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-29" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-32" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="870" as="sourcePoint" />
+            <mxPoint x="980" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-74" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-73" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Silhouette score, F1 scores" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-75" edge="1" parent="1" source="6NUe2xrrUi22PVwMwD8X-31" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="6NUe2xrrUi22PVwMwD8X-32" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1159.15" y="984.69" />
+            </Array>
+            <mxPoint x="880" y="870" as="sourcePoint" />
+            <mxPoint x="980" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NUe2xrrUi22PVwMwD8X-76" connectable="0" parent="6NUe2xrrUi22PVwMwD8X-75" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" value="Coverage %, completeness %" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="15" y="-40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
