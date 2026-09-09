@@ -20,7 +20,7 @@
 ## Week 3 (Aug 17 - Aug 23): Proposal Drafting \& Repository Setup
 
 * Drafted the project proposal document, writing sections (problem statement, solution, evaluation, risks, scalability) before circulating it to the team for review.
-* Created the team's GitHub repository and sent it to Dr. Raghav B. Venkataramaiyer for review alongside the proposal submission on Aug 21.
+* Created the team's GitHub repository and sent it to Mr. Jeelani Asif for review alongside the proposal submission on Aug 21.
 * Finalized formatting, author metadata, and proofreading for the full proposal before submission.
 
 ## Week 4 (Aug 24 - Aug 30): Census Dataset Collection \& Cleaning
