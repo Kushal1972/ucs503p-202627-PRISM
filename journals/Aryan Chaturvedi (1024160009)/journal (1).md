@@ -14,7 +14,7 @@
 ## Week 2 (Aug 10 - Aug 16): Primary Metric \& Fusion Layer Design
 
 * Defined the primary evaluation metric: percentage overlap between model-flagged under-developed districts and the official 112-district ADP list, with a 75% target.
-* Drafted the design for the data fusion layer: how SDG Index, Census, and NFHS records would be merged on cleaned state/district keys.
+* Drafted the design for the data fusion layer: how NITI Aayog's National Multidimensional Poverty Index (MPI) 2023, Census, and NFHS records would be merged on cleaned state/district keys.
 * Wrote the Time-to-Value and Scalability sections, emphasizing early validation against the ADP list and the modular, decoupled pipeline design.
 
 ## Week 3 (Aug 17 - Aug 23): Proposal Feedback \& Cluster Validation
