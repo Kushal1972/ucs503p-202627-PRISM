@@ -26,6 +26,8 @@
 
 * Collected and compiled the raw NFHS-5 district-level data table for the fusion prototype.
 * Collected and compiled the raw NITI Aayog's National Multidimensional Poverty Index (MPI) 2023 data table for the fusion prototype.
+* Studied the SDG India index data and realized that it's format wasn't compatible with other datasets and it did not cover all districts (only covered 400) ,
+  so researched for a more compatible and better data set and found the NITI Aayog's National Multidimensional Poverty Index (MPI) 2023 data set  
 
 
 
