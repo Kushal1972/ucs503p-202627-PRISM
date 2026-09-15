@@ -29,7 +29,14 @@
 * Flagged a batch of ambiguous Census district-name variants for manual review before the final merge.
 * Set up the journals folder structure for weekly progress tracking, following the course's expected format.
 
-## Week 5 (Aug 31 - Sep 6):   
+## Week 5 (Aug 31 - Sep 6): Merge Validation and Gantt Chart Creation
+* Exploratory Data Analysis & Missing-Value Study.
+* Validated that the Census dataset merged cleanly into the first fused table and spot-checked a sample of districts for accuracy.
+* Created a Gantt chart mapping out the project timeline and milestones through the remaining deliverables, and shared it with the team for planning.
+
+## Week 6 (Sep 7 - Sep 13): ER Diagram & ADP Comparison
+* Compared the model-flagged districts against the official ADP list and logged mismatches for the team to review.
+* Created an ER diagram outlining the fused district-level data schema (SDG, Census, NFHS, and ADP tables and how they relate) for the data layer documentation.
 
 
 
