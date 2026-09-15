@@ -29,5 +29,7 @@
 * Flagged a batch of ambiguous Census district-name variants for manual review before the final merge.
 * Set up the journals folder structure for weekly progress tracking, following the course's expected format.
 
+## Week 5 (Aug 31 - Sep 6):   
+
 
 
