@@ -3,1369 +3,427 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRISM | Explainable Machine Learning</title>
-  <meta name="description" content="PRISM - An Explainable Machine Learning Framework for District-Level Poverty and Development Risk Assessment in India.">
+  <title>PRISM | Explainable Machine Learning Framework</title>
 
   <style>
-    :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --soft-blue: #eff6ff;
-      --radius: 16px;
-    }
-
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      margin: 0;
+      background: #ffffff;
+      color: #24292f;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font: inherit;
-    }
-
     .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: auto;
+      width: 90%;
+      max-width: 1016px;
+      margin: 0 auto;
+      padding: 35px 0 45px;
     }
 
-    .navbar {
-      background: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-content {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--primary);
-      color: white;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #475569;
-      font-size: 14px;
+    .project-name {
+      color: #0969da;
+      font-size: 34px;
       font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .menu-btn {
-      display: none;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 8px;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    .hero {
-      padding: 90px 0 75px;
-      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      margin: 0 0 12px;
+      border-bottom: 1px solid #d0d7de;
+      padding-bottom: 12px;
     }
 
     h1 {
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.08;
-      letter-spacing: -2.5px;
-      margin-bottom: 25px;
+      font-size: 32px;
+      line-height: 1.25;
+      margin-top: 28px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d0d7de;
     }
 
     h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      letter-spacing: -1.3px;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      font-size: 25px;
+      line-height: 1.3;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d0d7de;
     }
 
     h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+      font-size: 20px;
+      margin-top: 24px;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 590px;
+    p {
+      margin: 0 0 18px;
     }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+    ul {
+      padding-left: 32px;
+      margin-top: 8px;
+      margin-bottom: 20px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 19px;
-      border-radius: 9px;
-      border: 1px solid var(--border);
-      background: white;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 25px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 25px;
-    }
-
-    .status {
-      color: #15803d;
-      background: #f0fdf4;
-      padding: 4px 9px;
-      border-radius: 20px;
-      font-weight: 700;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-
-    .stat {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 17px;
-    }
-
-    .stat-label {
-      font-size: 11px;
-      color: var(--muted);
+    li {
       margin-bottom: 5px;
     }
 
-    .stat-number {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -1px;
+    .intro {
+      font-size: 18px;
+      margin-bottom: 28px;
     }
 
-    .chart-title {
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .bar {
-      margin-bottom: 15px;
-    }
-
-    .bar-info {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      margin-bottom: 6px;
-      color: var(--muted);
-    }
-
-    .bar-track {
-      height: 8px;
-      background: #e2e8f0;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      background: #64748b;
-      border-radius: 20px;
-    }
-
-    .note {
-      margin-top: 22px;
-      padding: 12px;
-      background: #f8fafc;
-      border: 1px dashed var(--border);
-      border-radius: 9px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .section {
-      padding: 85px 0;
-    }
-
-    .section-header {
-      max-width: 700px;
-      margin-bottom: 35px;
-    }
-
-    .section-header p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .section-label {
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 25px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .card-number {
-      color: var(--primary);
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .card-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      background: var(--soft-blue);
-      color: var(--primary);
-      border-radius: 11px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .objective-list {
-      list-style: none;
-    }
-
-    .objective-list li {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .objective-list li:last-child {
-      border-bottom: none;
-    }
-
-    .objective-list strong {
-      color: var(--text);
-      display: block;
-      margin-bottom: 4px;
+    .highlight {
+      background: #f6f8fa;
+      border-left: 4px solid #0969da;
+      padding: 15px 18px;
+      margin: 20px 0;
     }
 
     .architecture {
-      background: #f1f5f9;
+      background: #f6f8fa;
+      border: 1px solid #d8dee4;
+      border-radius: 5px;
+      padding: 22px;
+      margin: 20px 0;
+      overflow-x: auto;
     }
 
-    .architecture-diagram {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .layer {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 23px;
-      position: relative;
-    }
-
-    .layer-number {
-      font-size: 11px;
-      color: var(--primary);
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .layer p {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .layer ul {
-      list-style: none;
-    }
-
-    .layer li {
-      padding: 9px 0;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 13px;
-      color: #475569;
-    }
-
-    .layer li::before {
-      content: "→";
-      color: var(--primary);
-      margin-right: 8px;
-      font-weight: 700;
-    }
-
-    .flow {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 35px;
-    }
-
-    .flow-step {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 12px 16px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .flow-arrow {
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .method-item {
-      display: grid;
-      grid-template-columns: 45px 1fr;
-      gap: 17px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .method-item:last-child {
-      border-bottom: none;
-    }
-
-    .method-number {
-      width: 40px;
-      height: 40px;
-      background: var(--soft-blue);
-      color: var(--primary);
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .method-item p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .tags {
-      margin-top: 17px;
+    .architecture pre {
+      margin: 0;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 15px;
+      line-height: 1.8;
+      white-space: pre;
     }
 
     .tag {
       display: inline-block;
-      font-size: 11px;
-      background: #f1f5f9;
-      color: #475569;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 5px 9px;
-      margin: 0 4px 5px 0;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .metric {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 23px;
-    }
-
-    .metric-label {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .metric-value {
-      font-size: 34px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin: 10px 0;
-    }
-
-    .metric p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .results-table {
-      width: 100%;
-      border-collapse: collapse;
+      background: #ddf4ff;
+      color: #0969da;
+      border-radius: 20px;
+      padding: 3px 12px;
+      margin: 3px 4px 3px 0;
       font-size: 14px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
     }
 
-    .results-table th,
-    .results-table td {
-      padding: 16px;
+    .team {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0 25px;
+    }
+
+    .team th,
+    .team td {
+      border: 1px solid #d0d7de;
+      padding: 10px 12px;
       text-align: left;
-      border-bottom: 1px solid var(--border);
     }
 
-    .results-table th {
-      background: #f8fafc;
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .results-table td {
-      color: var(--muted);
-    }
-
-    .results-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .team-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--soft-blue);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-    }
-
-    .team-card p {
-      margin: 0;
-    }
-
-    .team-card h3 {
-      margin-bottom: 3px;
+    .team th {
+      background: #f6f8fa;
+      font-weight: 600;
     }
 
     .footer {
-      background: #0f172a;
-      color: white;
-      padding: 45px 0 25px;
+      border-top: 1px solid #d0d7de;
+      margin-top: 35px;
+      padding-top: 20px;
+      text-align: right;
+      color: #57606a;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 35px;
+    a {
+      color: #0969da;
+      text-decoration: none;
     }
 
-    .footer p {
-      color: #94a3b8;
-      font-size: 13px;
-      margin-top: 12px;
-    }
-
-    .footer h3 {
-      font-size: 14px;
-    }
-
-    .footer a {
-      display: block;
-      color: #94a3b8;
-      font-size: 13px;
-      margin-top: 9px;
-    }
-
-    .footer a:hover {
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid #334155;
-      padding-top: 22px;
-      color: #94a3b8;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 850px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .grid-3,
-      .architecture-diagram {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
+    a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
       .container {
-        width: min(100% - 30px, 1120px);
+        width: 92%;
+        padding-top: 22px;
       }
 
-      .nav-content {
-        min-height: 65px;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 10px 0 15px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
-      }
-
-      .nav-content {
-        flex-wrap: wrap;
-      }
-
-      .grid-3,
-      .grid-2,
-      .architecture-diagram,
-      .metrics,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 55px 0;
+      .project-name {
+        font-size: 28px;
       }
 
       h1 {
-        letter-spacing: -1.5px;
+        font-size: 27px;
       }
 
-      .hero-card {
-        padding: 18px;
+      h2 {
+        font-size: 23px;
       }
 
-      .results-table {
-        min-width: 550px;
+      .intro {
+        font-size: 16px;
       }
 
-      .table-scroll {
-        overflow-x: auto;
+      .architecture {
+        padding: 15px;
       }
 
-      .flow {
-        justify-content: flex-start;
+      .architecture pre {
+        font-size: 12px;
       }
     }
   </style>
 </head>
 
 <body>
+  <main class="container">
 
-  <!-- NAVIGATION -->
-  <header class="navbar">
-    <div class="container nav-content">
-      <a href="#home" class="logo">
-        <span class="logo-icon">P</span>
-        <span>PRISM.</span>
+    <div class="project-name">PRISM</div>
+
+    <h1>Explainable Machine Learning Framework for District-Level Poverty and Development Risk Assessment in India</h1>
+
+    <p class="intro">
+      PRISM is a machine learning-based framework designed to analyze district-level
+      socio-economic indicators, identify development risk patterns, and provide
+      explainable insights to support data-driven decision-making.
+    </p>
+
+    <h2>Overview</h2>
+
+    <p>
+      PRISM combines data preprocessing, exploratory data analysis, machine learning,
+      and explainable artificial intelligence to study poverty and development-related
+      patterns across districts in India.
+    </p>
+
+    <p>The system focuses on:</p>
+
+    <ul>
+      <li>Collecting and organizing district-level socio-economic data</li>
+      <li>Cleaning and preprocessing the collected data</li>
+      <li>Performing exploratory data analysis</li>
+      <li>Selecting relevant features for model development</li>
+      <li>Applying machine learning algorithms</li>
+      <li>Evaluating model performance</li>
+      <li>Providing explainable insights into model predictions</li>
+      <li>Identifying districts with similar development-risk patterns</li>
+    </ul>
+
+    <h2>Objectives</h2>
+
+    <ul>
+      <li>Analyze poverty and development indicators at the district level</li>
+      <li>Identify patterns and relationships within socio-economic data</li>
+      <li>Develop machine learning models for risk assessment</li>
+      <li>Compare the performance of different machine learning algorithms</li>
+      <li>Explain the factors influencing model predictions</li>
+      <li>Present the results in a clear and understandable format</li>
+    </ul>
+
+    <h2>Methodology</h2>
+
+    <p>The PRISM framework follows the following workflow:</p>
+
+    <div class="architecture">
+      <pre>
+Data Collection
+      |
+      v
+Data Cleaning and Preprocessing
+      |
+      v
+Exploratory Data Analysis
+      |
+      v
+Feature Engineering and Feature Selection
+      |
+      v
+Machine Learning Model Development
+      |
+      v
+Model Evaluation
+      |
+      v
+Performance Satisfactory?
+      |                  |
+     No                 Yes
+      |                  |
+      +---- Model        v
+            Improvement  Explainable AI
+                         |
+                         v
+                  Risk Assessment
+                         |
+                         v
+                   Final Insights
+      </pre>
+    </div>
+
+    <h2>Machine Learning Techniques</h2>
+
+    <p>The framework may use the following techniques depending on the selected task:</p>
+
+    <ul>
+      <li>Linear Regression</li>
+      <li>Logistic Regression</li>
+      <li>Decision Tree</li>
+      <li>Random Forest</li>
+      <li>Support Vector Machine</li>
+      <li>K-Means Clustering</li>
+      <li>Hierarchical Clustering</li>
+    </ul>
+
+    <h2>Explainable AI</h2>
+
+    <p>
+      Explainable AI techniques are used to understand why a model produces a particular
+      prediction. This helps identify the indicators that contribute most strongly to
+      the development-risk assessment.
+    </p>
+
+    <ul>
+      <li>Feature importance analysis</li>
+      <li>Model interpretation</li>
+      <li>Explanation of individual predictions</li>
+      <li>Identification of important socio-economic indicators</li>
+    </ul>
+
+    <h2>Key Features</h2>
+
+    <ul>
+      <li>District-level data analysis</li>
+      <li>Data cleaning and preprocessing</li>
+      <li>Exploratory data analysis</li>
+      <li>Feature engineering and selection</li>
+      <li>Machine learning-based risk assessment</li>
+      <li>Model performance evaluation</li>
+      <li>Explainable machine learning insights</li>
+      <li>Clear presentation of analytical results</li>
+    </ul>
+
+    <h2>Technology Stack</h2>
+
+    <p>
+      <span class="tag">Python</span>
+      <span class="tag">Pandas</span>
+      <span class="tag">NumPy</span>
+      <span class="tag">Matplotlib</span>
+      <span class="tag">Seaborn</span>
+      <span class="tag">Scikit-learn</span>
+      <span class="tag">Jupyter Notebook</span>
+      <span class="tag">Google Colab</span>
+      <span class="tag">GitHub</span>
+    </p>
+
+    <h2>Architecture</h2>
+
+    <p>
+      The system follows a sequential machine learning architecture in which raw data
+      is processed, analyzed, used for model training, and then interpreted through
+      explainable AI techniques.
+    </p>
+
+    <div class="architecture">
+      <pre>
++-------------------------+
+|     Data Sources        |
++------------+------------+
+             |
+             v
++-------------------------+
+| Data Preprocessing      |
++------------+------------+
+             |
+             v
++-------------------------+
+| Exploratory Data        |
+| Analysis                |
++------------+------------+
+             |
+             v
++-------------------------+
+| Feature Engineering     |
+| and Feature Selection   |
++------------+------------+
+             |
+             v
++-------------------------+
+| Machine Learning Models |
++------------+------------+
+             |
+             v
++-------------------------+
+| Model Evaluation        |
++------------+------------+
+             |
+             v
++-------------------------+
+| Explainable AI          |
++------------+------------+
+             |
+             v
++-------------------------+
+| Development Risk        |
+| Assessment              |
++-------------------------+
+      </pre>
+    </div>
+
+    <h2>Expected Outcomes</h2>
+
+    <ul>
+      <li>Improved understanding of district-level development indicators</li>
+      <li>Identification of meaningful patterns in socio-economic data</li>
+      <li>Comparison of different machine learning models</li>
+      <li>Identification of important features influencing predictions</li>
+      <li>Explainable and interpretable development-risk insights</li>
+    </ul>
+
+    <h2>Project Team</h2>
+
+    <table class="team">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aryan Chaturvedi</td>
+          <td>Team Member</td>
+        </tr>
+        <tr>
+          <td>Amish Kapoor</td>
+          <td>Team Member</td>
+        </tr>
+        <tr>
+          <td>Kushal</td>
+          <td>Team Member</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Academic Information</h2>
+
+    <ul>
+      <li><strong>Course:</strong> UCS503 Software Engineering</li>
+      <li><strong>Institute:</strong> Thapar Institute of Engineering and Technology</li>
+      <li><strong>Branch:</strong> Computer Science and Engineering</li>
+      <li><strong>Project:</strong> PRISM</li>
+    </ul>
+
+    <div class="footer">
+      This site is open source.
+      <a href="https://github.com/Kushal1972/ucs503p-202627-PRISM" target="_blank">
+        View project repository
       </a>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
-        ☰
-      </button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Overview</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#results">Results</a>
-        <a href="#team">Team</a>
-      </nav>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Machine Learning · Software Engineering</div>
-
-        <h1>Understanding development risk through data.</h1>
-
-        <p>
-          PRISM is an explainable machine learning framework for
-          district-level poverty and development risk assessment in India.
-        </p>
-
-        <div class="buttons">
-          <a href="#methodology" class="btn btn-primary">
-            Explore Methodology →
-          </a>
-
-          <a href="#architecture" class="btn">
-            View Architecture
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="card-top">
-          <span>PRISM / ANALYTICS</span>
-          <span class="status">Proposed Framework</span>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-label">DATA SOURCES</div>
-            <div class="stat-number">04</div>
-          </div>
-
-          <div class="stat">
-            <div class="stat-label">ML APPROACHES</div>
-            <div class="stat-number">02</div>
-          </div>
-        </div>
-
-        <div class="chart-title">Development indicators</div>
-
-        <div class="bar">
-          <div class="bar-info">
-            <span>Health</span>
-            <span>Illustrative</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill" style="width: 84%;"></div>
-          </div>
-        </div>
-
-        <div class="bar">
-          <div class="bar-info">
-            <span>Education</span>
-            <span>Illustrative</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill" style="width: 67%;"></div>
-          </div>
-        </div>
-
-        <div class="bar">
-          <div class="bar-info">
-            <span>Households</span>
-            <span>Illustrative</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill" style="width: 74%;"></div>
-          </div>
-        </div>
-
-        <div class="bar">
-          <div class="bar-info">
-            <span>Poverty</span>
-            <span>Illustrative</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill" style="width: 58%;"></div>
-          </div>
-        </div>
-
-        <div class="note">
-          Illustrative visual — not measured project results.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHALLENGE -->
-  <section class="section" id="challenge">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">The Challenge</div>
-        <h2>From fragmented data to a unified view.</h2>
-        <p>
-          District-level development assessment involves multiple
-          indicators and different data sources. PRISM brings them
-          together into a structured analytical workflow.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-number">01</div>
-          <h3>Fragmented datasets</h3>
-          <p>
-            Socioeconomic, health, demographic, and poverty indicators
-            originate from different sources and need consistent integration.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-number">02</div>
-          <h3>Reliable preparation</h3>
-          <p>
-            District names, missing values, data types, and numerical
-            features must be cleaned before modeling.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-number">03</div>
-          <h3>Interpretable predictions</h3>
-          <p>
-            Classification should be accompanied by feature-importance
-            analysis so contributing indicators can be examined.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- OBJECTIVES -->
-  <section class="section" style="background: white;" id="objectives">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Project Objectives</div>
-        <h2>Designed for reproducible analysis.</h2>
-        <p>
-          PRISM follows a modular approach focused on data quality,
-          model evaluation, and explainability.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-icon">01</div>
-          <h3>Data integration and quality</h3>
-          <p>
-            Combine Census 2011, NFHS-5, MPI, and the Aspirational
-            Districts list using standardized state and district keys.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">02</div>
-          <h3>Clustering and classification</h3>
-          <p>
-            Apply K-Means, hierarchical clustering, Logistic Regression,
-            Random Forest, and SVM to analyze district patterns.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">03</div>
-          <h3>Model evaluation</h3>
-          <p>
-            Use silhouette score, precision, recall, F1-score, and
-            confusion matrices to assess the analytical workflow.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-icon">04</div>
-          <h3>Explainability and presentation</h3>
-          <p>
-            Present feature importance, district-level summaries,
-            visualizations, and reproducible results.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHODOLOGY -->
-  <section class="section" id="methodology">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">01 / Methodology</div>
-        <h2>How PRISM works.</h2>
-        <p>
-          A structured workflow for turning district-level datasets
-          into analyzable features, machine learning outputs, and
-          interpretable findings.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="method-item">
-          <div class="method-number">01</div>
-          <div>
-            <h3>Data collection and integration</h3>
-            <p>
-              Load Census 2011, NFHS-5, Multidimensional Poverty Index,
-              and Aspirational Districts data. Create a standardized
-              state-district key for reliable merging.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-number">02</div>
-          <div>
-            <h3>Exploratory data analysis</h3>
-            <p>
-              Examine data types, descriptive statistics, missing values,
-              numerical distributions, correlations, and target-class balance.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-number">03</div>
-          <div>
-            <h3>Data cleaning and feature preparation</h3>
-            <p>
-              Handle missing values, investigate outliers, convert
-              suitable count-based indicators into rates, and remove
-              redundant or unsuitable features.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-number">04</div>
-          <div>
-            <h3>Clustering</h3>
-            <p>
-              Scale the prepared numerical features and use K-Means
-              and hierarchical clustering to identify groups of
-              districts with similar characteristics.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-number">05</div>
-          <div>
-            <h3>Classification</h3>
-            <p>
-              Train Logistic Regression, Random Forest, and Support
-              Vector Machine models to classify districts using the
-              aspirational-status target variable.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-item">
-          <div class="method-number">06</div>
-          <div>
-            <h3>Evaluation and explainability</h3>
-            <p>
-              Assess model performance with classification metrics
-              and confusion matrices. Analyze feature importance
-              to identify indicators associated with predictions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ARCHITECTURE -->
-  <section class="section architecture" id="architecture">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">02 / Architecture</div>
-        <h2>Three layers. One workflow.</h2>
-        <p>
-          PRISM separates data management, machine learning, and
-          presentation into modular layers to support reproducibility.
-        </p>
-      </div>
-
-      <div class="architecture-diagram">
-        <article class="layer">
-          <div class="layer-number">LAYER 01</div>
-          <h3>Data layer</h3>
-          <p>Collect and prepare a unified district-level dataset.</p>
-
-          <ul>
-            <li>Census 2011</li>
-            <li>NFHS-5</li>
-            <li>Multidimensional Poverty Index</li>
-            <li>Aspirational Districts list</li>
-            <li>Data cleaning and integration</li>
-          </ul>
-        </article>
-
-        <article class="layer">
-          <div class="layer-number">LAYER 02</div>
-          <h3>Model layer</h3>
-          <p>Analyze patterns, train models, and evaluate results.</p>
-
-          <ul>
-            <li>Exploratory data analysis</li>
-            <li>Data cleaning</li>
-            <li>Feature engineering</li>
-            <li>Clustering</li>
-            <li>Classification</li>
-            <li>Model evaluation</li>
-            <li>Explainability</li>
-          </ul>
-        </article>
-
-        <article class="layer">
-          <div class="layer-number">LAYER 03</div>
-          <h3>Presentation layer</h3>
-          <p>Present district-level results and analytical insights.</p>
-
-          <ul>
-            <li>Charts</li>
-            <li>Tables</li>
-            <li>Cluster summaries</li>
-            <li>Classification reports</li>
-            <li>Feature-importance visualizations</li>
-            <li>Lightweight dashboard</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="flow">
-        <span class="flow-step">Raw data sources</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Data integration</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">EDA & Cleaning</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Feature preparation</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">ML models</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Evaluation</span>
-        <span class="flow-arrow">→</span>
-        <span class="flow-step">Explainability</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- DATA SOURCES AND TECHNOLOGY -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Data and Technology</div>
-        <h2>Built with open-source tools.</h2>
-        <p>
-          The proposed implementation uses Python and commonly used
-          data science libraries.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <h3>Data sources</h3>
-          <ul class="objective-list">
-            <li>
-              <strong>Census 2011</strong>
-              Demographic, socioeconomic, workforce, and household indicators.
-            </li>
-            <li>
-              <strong>NFHS-5</strong>
-              Health, nutrition, maternal and child health, and sanitation indicators.
-            </li>
-            <li>
-              <strong>Multidimensional Poverty Index</strong>
-              Poverty measures, including headcount ratio, intensity, and MPI values.
-            </li>
-            <li>
-              <strong>Aspirational Districts list</strong>
-              Reference classification used to create the target variable.
-            </li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <h3>Technology stack</h3>
-          <p>
-            Tools selected for data manipulation, machine learning,
-            visualization, and reproducible development.
-          </p>
-
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Scikit-learn</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">Jupyter Notebook</span>
-            <span class="tag">Google Colab</span>
-            <span class="tag">Git</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS -->
-  <section class="section" id="results" style="background: white;">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">03 / Results and Evaluation</div>
-        <h2>Measure. Compare. Explain.</h2>
-        <p>
-          This section is prepared for the actual experimental
-          results after model training and evaluation.
-        </p>
-      </div>
-
-      <div class="metrics">
-        <article class="metric">
-          <div class="metric-label">CLUSTERING</div>
-          <div class="metric-value">—</div>
-          <h3>Silhouette score</h3>
-          <p>Cluster cohesion and separation.</p>
-        </article>
-
-        <article class="metric">
-          <div class="metric-label">CLASSIFICATION</div>
-          <div class="metric-value">—</div>
-          <h3>F1-score</h3>
-          <p>Balance between precision and recall.</p>
-        </article>
-
-        <article class="metric">
-          <div class="metric-label">VALIDATION</div>
-          <div class="metric-value">—</div>
-          <h3>Precision / Recall</h3>
-          <p>Comparison against the reference list.</p>
-        </article>
-      </div>
-
-      <div class="card">
-        <h3>Classification model comparison</h3>
-        <p style="margin-bottom: 20px;">
-          Replace the placeholders with the actual metrics from your experiments.
-        </p>
-
-        <div class="table-scroll">
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1-score</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Logistic Regression</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-
-              <tr>
-                <td>Random Forest</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-
-              <tr>
-                <td>Support Vector Machine</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top: 20px;">
-        <article class="card">
-          <h3>Feature importance</h3>
-          <p>
-            Add your Random Forest feature-importance chart or
-            permutation-importance plot here after training.
-          </p>
-
-          <div class="note">
-            Chart placeholder — Add your saved image or interactive chart.
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>District-level insights</h3>
-          <p>
-            Add district summaries, cluster profiles, confusion
-            matrices, and comparisons with the Aspirational Districts list.
-          </p>
-
-          <div class="note">
-            Results placeholder — Add actual district-level findings.
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section class="section" id="team">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">04 / Project Team</div>
-        <h2>Built as a team project.</h2>
-        <p>
-          PRISM is a UCS503 Software Engineering project developed
-          by third-year Computer Science and Engineering students
-          at Thapar Institute of Engineering and Technology.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card team-card">
-          <div class="avatar">AK</div>
-          <div>
-            <h3>Amish Kapoor</h3>
-            <p>1024160005</p>
-          </div>
-        </article>
-
-        <article class="card team-card">
-          <div class="avatar">AC</div>
-          <div>
-            <h3>Aryan Chaturvedi</h3>
-            <p>1024160009</p>
-          </div>
-        </article>
-
-        <article class="card team-card">
-          <div class="avatar">K</div>
-          <div>
-            <h3>Kushal</h3>
-            <p>1024160003</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="card" style="margin-top: 20px;">
-        <h3>Academic context</h3>
-        <p>
-          UCS503 — Software Engineering<br>
-          Computer Science and Engineering Department<br>
-          Thapar Institute of Engineering and Technology, Patiala
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="logo">
-            <span class="logo-icon">P</span>
-            <span>PRISM.</span>
-          </div>
-          <p>
-            An Explainable Machine Learning Framework for District-Level
-            Poverty and Development Risk Assessment in India.
-          </p>
-        </div>
-
-        <div>
-          <h3>Navigation</h3>
-          <a href="#home">Overview</a>
-          <a href="#methodology">Methodology</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#results">Results</a>
-        </div>
-
-        <div>
-          <h3>Project</h3>
-          <a href="#team">Team</a>
-          <a href="#objectives">Objectives</a>
-          <a href="#challenge">Problem Statement</a>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <span>© 2026 PRISM · UCS503 Software Engineering</span>
-        <span>Thapar Institute of Engineering and Technology</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", function () {
-      navLinks.classList.toggle("open");
-
-      if (navLinks.classList.contains("open")) {
-        menuBtn.textContent = "✕";
-      } else {
-        menuBtn.textContent = "☰";
-      }
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuBtn.textContent = "☰";
-      });
-    });
-  </script>
-
+  </main>
 </body>
 </html>
