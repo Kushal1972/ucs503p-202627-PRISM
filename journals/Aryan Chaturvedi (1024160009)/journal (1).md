@@ -28,3 +28,8 @@
 * Cross-checked the ADP dataset's district naming convention against the merged fusion table to flag additional name-matching edge cases.
 * Outlined the feature-importance extraction approach that will back the explainability layer in later deliverables.
 
+## Week 5 (Aug 31 – Sep 6): Use Case Diagram & Data Flow Diagrams
+
+* Worked on preparing and refining the PRISM Use Case Diagram to represent the interactions between Government Data Sources, the Data Analyst/Administrator, the Aspirational Districts Programme (ADP), and the Policy Maker/Decision Maker.
+* Contributed to designing the Level 0 and Level 1 Data Flow Diagrams (DFDs) to illustrate the overall PRISM system, its major processes, and the flow of data between source datasets, data processing, machine learning, validation, and decision support.
+* Worked on Level 2 DFDs to break down the major processes into detailed sub-processes, covering data acquisition and quality assurance, district matching and data fusion, clustering and classification, and validation and explainability.
