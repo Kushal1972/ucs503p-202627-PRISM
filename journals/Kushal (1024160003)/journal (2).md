@@ -34,9 +34,24 @@
 * Validated that the Census dataset merged cleanly into the first fused table and spot-checked a sample of districts for accuracy.
 * Created a Gantt chart mapping out the project timeline and milestones through the remaining deliverables, and shared it with the team for planning.
 
-## Week 6 (Sep 7 - Sep 13): ER Diagram & ADP Comparison
+## Week 6 (Sept 7 - Sept 13): ER Diagram & ADP Comparison
 * Compared the model-flagged districts against the official ADP list and logged mismatches for the team to review.
 * Created an ER diagram outlining the fused district-level data schema (SDG, Census, NFHS, and ADP tables and how they relate) for the data layer documentation.
+
+## Week 7(Sep 14 - Sept 20): Handling Missing Data and Feature Engineering
+* Worked on feature engineering by creating additional features from existing census data, including literacy rate, female population rate, SC/ST population rates, and workers rate.
+* Created household-related percentage features and other demographic indicators to make the dataset more suitable for machine learning analysis.
+* Standardized district identifiers and checked the consistency of the merged Census, NFHS, MPI, and Aspirational Districts datasets.
+
+## Week 8(Oct 5 - Oct 11): Outlier Analysis and Feature Selection Preparation
+* Worked on reducing the number of features by reviewing the available columns and identifying relevant variables for further analysis.
+* Applied standardization to the selected numerical features so that variables with larger numerical scales would not dominate distance-based clustering methods.
+* Applied Principal Component Analysis (PCA) to study the variance explained by the dataset's principal components.
+
+## Week 9(Oct 12 - Oct 18): District Clustering and Model Evaluation
+* Analyzed the relationship between the identified district clusters and the Aspirational District classification.
+* Created a contingency table to compare the number and percentage of Aspirational Districts across the clusters.
+* Explored feature selection using L1-regularized Logistic Regression (Lasso) and Random Forest feature importance, and began evaluating model performance through stratified five-fold cross-validation using metrics such as F1-score, precision, and recall.
 
 
 
