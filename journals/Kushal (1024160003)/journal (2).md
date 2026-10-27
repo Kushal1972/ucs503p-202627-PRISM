@@ -40,13 +40,13 @@
 
 ## Week 7(Sep 14 - Sept 20): Handling Missing Data and Feature Engineering
 * Worked on feature engineering by creating additional features from existing census data, including literacy rate, female population rate, SC/ST population rates, and workers rate.
-* Created household-related percentage features and other demographic indicators to make the dataset more suitable for machine learning analysis.
+* Assisted in examining missing values and reviewing the quality of the prepared dataset to ensure it was suitable for subsequent machine learning tasks.
 * Standardized district identifiers and checked the consistency of the merged Census, NFHS, MPI, and Aspirational Districts datasets.
 
 ## Week 8(Oct 5 - Oct 11): Outlier Analysis and Feature Selection Preparation
 * Worked on reducing the number of features by reviewing the available columns and identifying relevant variables for further analysis.
+* Contributed to reviewing relevant features and understanding the need for standardization before applying distance-based clustering algorithms.
 * Applied standardization to the selected numerical features so that variables with larger numerical scales would not dominate distance-based clustering methods.
-* Applied Principal Component Analysis (PCA) to study the variance explained by the dataset's principal components.
 
 ## Week 9(Oct 12 - Oct 18): District Clustering and Model Evaluation
 * Analyzed the relationship between the identified district clusters and the Aspirational District classification.
