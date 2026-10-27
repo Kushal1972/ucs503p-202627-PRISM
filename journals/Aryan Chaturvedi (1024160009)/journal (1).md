@@ -48,7 +48,7 @@ z# Weekly Progress Journal — Aryan Chaturvedi (Roll No: 1024160009)
 * Analyzed the relationship between the identified district clusters and the Aspirational District classification to understand how the clustering results corresponded with the existing classification of underdeveloped districts.
 * Assisted in analyzing potential outliers in numerical features using the Interquartile Range (IQR) method and reviewing the summary of detected outliers.
 
-## Week 9 (Sep 28 – Oct 4): Sequence Diagram & Class Diagram
+## Week 9 (Oct 12 – Oct 18): Sequence Diagram & Class Diagram
 * Created the PRISM Sequence Diagram to illustrate the interactions between system components and the flow of operations during data processing, model evaluation, and output generation.
 * Designed the PRISM Class Diagram to represent the system's main components, their attributes, operations, and relationships.
 * Refined both diagrams to improve clarity and maintain consistency with the proposed system architecture and workflow.
