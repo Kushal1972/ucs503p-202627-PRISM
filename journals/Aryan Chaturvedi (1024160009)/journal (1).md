@@ -33,3 +33,8 @@
 * Worked on preparing and refining the PRISM Use Case Diagram to represent the interactions between Government Data Sources, the Data Analyst/Administrator, the Aspirational Districts Programme (ADP), and the Policy Maker/Decision Maker.
 * Contributed to designing the Level 0 and Level 1 Data Flow Diagrams (DFDs) to illustrate the overall PRISM system, its major processes, and the flow of data between source datasets, data processing, machine learning, validation, and decision support.
 * Worked on Level 2 DFDs to break down the major processes into detailed sub-processes, covering data acquisition and quality assurance, district matching and data fusion, clustering and classification, and validation and explainability.
+
+## Week 6 (Sep 7 – Sep 13): Activity Diagram & Data Integration
+* Created the PRISM Activity Diagram to represent the overall system workflow, including data processing, clustering, classification, and model evaluation.
+* Helped refine the data integration approach after identifying that districts in different states can share the same name, making district name alone insufficient for accurate merging.
+* Contributed to updating the district key (dkey) to combine district name and state name, improving the accuracy of dataset merging.
