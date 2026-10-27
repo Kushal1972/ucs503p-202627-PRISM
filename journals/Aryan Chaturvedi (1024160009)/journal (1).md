@@ -43,7 +43,7 @@ z# Weekly Progress Journal — Aryan Chaturvedi (Roll No: 1024160009)
 * Created household-related percentage features and other demographic indicators to make the dataset more suitable for machine learning analysis.
 * Contributed in reviewing the merged Census, NFHS, MPI, and Aspirational Districts datasets to check consistency and identify potential data integration issues.
 
-## Week 8 (Sep 21 – Sep 27): Outlier Analysis & Feature Selection
+## Week 8 (Oct 5 – Oct 11): Outlier Analysis & Feature Selection
 * Applied Principal Component Analysis (PCA) to examine the variance explained by the dataset's principal components and understand how the dimensionality of the dataset could be reduced while retaining important information.
 * Analyzed the relationship between the identified district clusters and the Aspirational District classification to understand how the clustering results corresponded with the existing classification of underdeveloped districts.
 * Assisted in analyzing potential outliers in numerical features using the Interquartile Range (IQR) method and reviewing the summary of detected outliers.
