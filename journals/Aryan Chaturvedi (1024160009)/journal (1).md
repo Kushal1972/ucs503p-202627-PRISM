@@ -40,8 +40,8 @@ z# Weekly Progress Journal — Aryan Chaturvedi (Roll No: 1024160009)
 * Contributed to updating the district key (dkey) to combine district name and state name, improving the accuracy of dataset merging.
 
 ## Week 7 (Sep 14 – Sep 20): Feature Engineering & Dataset Integration
-* Created household-related percentage features and other demographic indicators to make the dataset more suitable for machine learning analysis.
-* Contributed in reviewing the merged Census, NFHS, MPI, and Aspirational Districts datasets to check consistency and identify potential data integration issues.
+* Created household-related percentage features and additional demographic indicators from the existing dataset to capture important aspects of household conditions and district-level development, making the data more informative and suitable for further machine learning analysis.
+* Contributed to reviewing the merged Census, NFHS, MPI, and Aspirational Districts datasets by checking data consistency, verifying district-level alignment, and identifying potential data integration issues that could affect the reliability of subsequent analysis and model development.
 
 ## Week 8 (Oct 5 – Oct 11): Outlier Analysis, PCA & Cluster Evaluation
 * Applied Principal Component Analysis (PCA) to examine the variance explained by the dataset's principal components and understand how the dimensionality of the dataset could be reduced while retaining important information.
