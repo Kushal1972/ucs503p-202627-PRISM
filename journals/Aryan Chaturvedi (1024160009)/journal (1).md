@@ -40,5 +40,11 @@
 * Contributed to updating the district key (dkey) to combine district name and state name, improving the accuracy of dataset merging.
 
 ## Week 7 (Sep 14 – Sep 20): Dataset Preparation & Quality Analysis
+* Created household-related percentage features and other demographic indicators to make the dataset more suitable for machine learning analysis.
 * Helped review the merged Census, NFHS, MPI, and Aspirational Districts datasets to check consistency and identify potential data integration issues.
-* Assisted in examining missing values and reviewing the quality of the prepared dataset to ensure it was suitable for subsequent machine learning tasks.
+
+## Week 8 (Sep 21 – Sep 27): Outlier Analysis & Feature Selection
+* Applied Principal Component Analysis (PCA) to study the variance explained by the dataset's principal components.
+* Analyzed the relationship between the identified district clusters and the Aspirational District classification.
+* Assisted in analyzing potential outliers in numerical features using the Interquartile Range (IQR) method and reviewing the summary of detected outliers.
+
