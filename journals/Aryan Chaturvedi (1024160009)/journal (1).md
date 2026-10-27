@@ -38,3 +38,7 @@
 * Created the PRISM Activity Diagram to represent the overall system workflow, including data processing, clustering, classification, and model evaluation.
 * Helped refine the data integration approach after identifying that districts in different states can share the same name, making district name alone insufficient for accurate merging.
 * Contributed to updating the district key (dkey) to combine district name and state name, improving the accuracy of dataset merging.
+
+## Week 7 (Sep 14 – Sep 20): Dataset Preparation & Quality Analysis
+* Helped review the merged Census, NFHS, MPI, and Aspirational Districts datasets to check consistency and identify potential data integration issues.
+* Assisted in examining missing values and reviewing the quality of the prepared dataset to ensure it was suitable for subsequent machine learning tasks.
